@@ -22,8 +22,8 @@ def home(request):
 				return render(request, 'home.html', {'all_items': all_items})
 
 	else:	
-	 		all_items = List.objects.all
-	 		return render(request, 'home.html', {'all_items': all_items})
+	 		#all_items = List.objects.all
+	 		return render(request, 'home.html', {})
 
 
 def about(request):
