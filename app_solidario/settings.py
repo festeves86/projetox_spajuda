@@ -81,11 +81,16 @@ WSGI_APPLICATION = 'app_solidario.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
+DATABASES['default'] = dj_database_url.config(default='postgres://qnlfltalcxkxsd:afa3eca373c0c481885daaaf4384e18ac36ec323020f777c4857676cd44706e8@ec2-54-147-209-121.compute-1.amazonaws.com:5432/d2cd2mhsj368hq')  
+
+db_from_env = dj_database_url.config(conn_max_age = 600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
