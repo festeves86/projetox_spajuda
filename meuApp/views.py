@@ -23,15 +23,15 @@ def home(request):
 
 	else:	
 	 		all_items = List.objects.all
-	 		return render(request, 'home.html', {})
+	 		return render(request, 'home.html', {'all_items': all_items})
 
 
 def about(request):
-	my_name = "John Elder"
+	my_name = "SampaAjuda"
 	return render(request, 'about.html', {'name': my_name})
 
 def como_funciona(request):
-	my_name = "John Elder"
+	my_name = "SampaAjuda"
 	return render(request, 'como_funciona.html', {'name': my_name})
 
 
