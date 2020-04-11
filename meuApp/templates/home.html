@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% block title %}
 
 To-do List
@@ -12,12 +13,12 @@ To-do List
 <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-          <div class="col-md-3" style="margin: 50px 150px">
+          <div class="col-md-3">
             <h1>Quero ajudar</h1>
             <p>Ajude uma pessoa no grupo de risco da pandemia a realizar tarefas simples  </p>
             <p><a class="btn btn-secondary" href="{% url 'cadastro' %}" role="button">Cadastre-se »</a></p>
           </div>
-          <div class="col-md-4"  style="margin: 50px 0px">
+          <div class="col-md-4">
             <h1>Preciso de ajuda</h1>
             <p>Se voce é uma pessoa no grupo de risco para a pandemia, conecte-se com uma pessoa que possa ajudar você. </p>
             <p><a class="btn btn-secondary" href="{% url 'cadastro_gr' %}" role="button">Cadastre-se »</a></p>
