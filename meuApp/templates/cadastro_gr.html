@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+To-do List - About Me
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+{% if messages %}
+
+  {% for message in messages %}
+    <div class="alert alert-warning" role="alert">
+        {{ message }}
+    </div>
+  {% endfor %}
+
+{% endif %}
+</br>
+
+<form class="needs-validation" novalidate="" method ="POST">
+              {% csrf_token %}
+<div class="container">
+<div class="row">
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Cadastro</h4>
+           <div class="col-md-0 mb-3">
+              <h6>Olá! Antes de colhermos seus dados você ou a pessoa a quem vai cadastrar se enquadra/possui em alguma das características abaixo?
+            </h6>
+              <select class="custom-select d-block w-100" id="country" required="" name="item">
+                <option value="">Selecione...</option>
+                <option>Idoso</option>
+                <option>Doença Respiratoria</option>
+                <option>Diabetes</option>
+                <option>Hipertensão</option>
+                <option>Pressão Alta</option>
+                <option>Doença Autoimune </option>
+                <option>Gravidez</option>
+                <option>Problema Cardiaco</option>
+                <option>Fumante</option>
+                <option>Insuficiencia Renal</option>
+                <option>Sintoma de Coronavirus</option>
+                <option>Mora com alguem com alguma das caracteristicas anteriores</option>
+                <option>Outra condição de risco (favor informar)</option>
+                <option>Não me enquadro em nenhuma categoria anterior</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+          </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Nome</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="" name="nome">
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Sobrenome</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="" name="sobrenome">
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="firstName">Número do Whatsapp</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Exemplo: +55 11 988880000" value="" required="" name="nro_whatsapp">
+                <small class="text-muted">Exemplo: +55 11 988880000</small>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email <span class="text-muted">(Opcional)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" name="email">
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="firstName">Tipo de Logradouro</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Exemplo: Rua, Avenida, ..." value="" required="" name="tipo_logradouro">
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+
+            <div class="mb-3">
+              <label for="address">Nome do Logradouro</label>
+              <input type="text" class="form-control" id="address" placeholder="Exemplo: Faria Lima 3500" required="" name="endereco">
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address2">Complemento<span class="text-muted">(Opcional)</span></label>
+              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" name="complemento">
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Bairro</label>
+              <input type="text" class="form-control" id="address" placeholder="Exemplo: Itaim" required="" name="bairro">
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="country">Estado</label>
+                <select class="custom-select d-block w-100" id="country" required="" name="estado">
+                  <option value="">Selcione...</option>
+                  <option>Brasil</option>
+                  <option>Estados Unidos</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="state">Cidade</label>
+                <select class="custom-select d-block w-100" id="state" required="" name="cidade">
+                  <option value="">Selecione...</option>
+                  <option>Sao Paulo</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="zip">CEP</label>
+                <input type="text" class="form-control" id="zip" placeholder="" required="" name="CEP">
+                <div class="invalid-feedback">
+                  CEP é necessario.
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+            <h5>Indique que tipos de ajuda voce precisa neste momento</h5>
+            </br>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="same-address2" name="compras_supermercados">
+              <label class="custom-control-label" for="same-address2">Realizar compras no supermercado</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="save-info" name="compras_farmacia">
+              <label class="custom-control-label" for="save-info">Realizar compras na farmacia</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="save-info2" name="passeio_pet">
+              <label class="custom-control-label" for="save-info2">Passear com animal de estimação</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="save-info3" name="outras_ajudas">
+              <label class="custom-control-label" for="save-info3">Outro (informar abaixo) </label>
+            </div>
+          </br>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="address" placeholder="" required="" name="outras_ajudas_conteudo">
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+            <hr class="mb-4">
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Realizar cadastro</button>
+          </form>
+        </div>
+      </div>
+</div>
+
+
+
+
+</br>
+
+
+
+<h1> Hello World Homepage </h1>
+
+{% if all_items %}
+<table class="table table-bordered">
+    {% for things in all_items %}
+      {% if things.completed %} 
+        <tr class=" table-secondary">
+          <td> {{ things.item }} </td>
+          <td><center> {{  things.completed }} </center> </td>
+          <td><center> {{  things.nome }} </center> </td>
+          <td><center> {{  things.sobrenome }} </center> </td>
+          <td><center> {{  things.nro_whatsapp }} </center> </td>
+          <td><center> {{  things.endereco }} </center> </td>
+          <td> <center><a href="{% url 'delete' things.id %}">Delete</a></center></td>
+        </tr>
+      {% else %}
+        <tr>
+          <td> {{ things.item }} </td>
+          <td><center> {{  things.completed }} </center> </td>
+          <td><center> {{  things.nome }} </center> </td>
+          <td><center> {{  things.sobrenome }} </center> </td>
+          <td><center> {{  things.nro_whatsapp }} </center> </td>
+          <td><center> {{  things.endereco }} </center> </td>
+          <td> <center><a href="{% url 'delete' things.id %}">Delete</a></center></td>
+        </tr>
+      {% endif %} 
+    {% endfor %}
+</table>
+{% endif %}
+
+
+{% endblock %}
