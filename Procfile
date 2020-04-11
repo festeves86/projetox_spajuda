@@ -1,1 +1,1 @@
-www: gunicorn app_solidario.wsgi
+web: gunicorn app_solidario.wsgi
