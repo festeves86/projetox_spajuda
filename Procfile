@@ -1,0 +1,1 @@
+www: gunicorn app_solidario.wsgi
