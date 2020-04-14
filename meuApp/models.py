@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 
 class List(models.Model):
-	item = models.CharField(max_length = 200, default='')
 	nome = models.CharField(max_length = 200, default='')
+	item = models.CharField(max_length = 200, default='')
 	sobrenome = models.CharField(max_length = 200, default='')
 	nro_whatsapp = models.CharField(max_length = 200, default='')
 	email = models.CharField(max_length = 200, default='NA', blank=True, null=True)
@@ -26,7 +26,7 @@ class List(models.Model):
 	radio_dist4 = models.BooleanField(default= False)
 	
 	def __str__(self):
-		return self.item
+		return self.nome
 
 
 class List2(models.Model):
@@ -50,4 +50,4 @@ class List2(models.Model):
 	completed = models.BooleanField(default= False)
 	
 	def __str__(self):
-		return self.item
+		return self.nome
