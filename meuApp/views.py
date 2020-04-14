@@ -26,9 +26,13 @@ def home(request):
 	 		return render(request, 'home.html', {'all_items': all_items})
 
 
-def about(request):
+def sobre(request):
 	my_name = "SampaAjuda"
-	return render(request, 'about.html', {'name': my_name})
+	return render(request, 'sobre.html', {'name': my_name})
+
+def faq(request):
+	my_name = "SampaAjuda"
+	return render(request, 'faq.html', {'name': my_name})	
 
 def como_funciona(request):
 	my_name = "SampaAjuda"

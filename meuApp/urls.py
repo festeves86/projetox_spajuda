@@ -3,9 +3,10 @@ from . import views
 
 urlpatterns = [
 	path('',views.home, name='home'),
-	path('about/',views.about, name='about'),
-	path('cadastro/',views.cadastro, name='cadastro'),
-	path('cadastro_gr/',views.cadastro_gr, name='cadastro_gr'),
+	path('sobre/',views.sobre, name='sobre'),
+	path('faq/',views.faq, name='faq'),
+	path('quero_ajudar/',views.cadastro, name='quero_ajudar'),
+	path('preciso_de_ajuda/',views.cadastro_gr, name='preciso_de_ajuda'),
     path('como_funciona/',views.como_funciona, name='como_funciona'),
 	path('delete/<list_id>', views.delete, name='delete'),
 ]
