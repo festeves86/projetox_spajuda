@@ -20,10 +20,10 @@ class List(models.Model):
 	passeio_pet = models.BooleanField(default= False)
 	outras_ajudas = models.BooleanField(default= False)
 	completed = models.BooleanField(default= False)
-	raio1 = models.BooleanField(default= False)
-	raio2 = models.BooleanField(default= False)
-	raio3 = models.BooleanField(default= False)
-	raio4 = models.BooleanField(default= False)
+	# raio1 = models.BooleanField(default= False)
+	# raio2 = models.BooleanField(default= False)
+	# raio3 = models.BooleanField(default= False)
+	# raio4 = models.BooleanField(default= False)
 	
 	def __str__(self):
 		return self.item
