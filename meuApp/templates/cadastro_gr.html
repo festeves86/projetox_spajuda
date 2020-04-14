@@ -23,7 +23,79 @@ To-do List - About Me
 {% endif %}
 </br>
 
-<form class="needs-validation" novalidate="" method ="POST">
+<script>
+function validateForm() {
+  var item = document.forms["cadastro_grupo_de_risco"]["item"].value;
+  var nome = document.forms["cadastro_grupo_de_risco"]["nome"].value;
+  var sobrenome = document.forms["cadastro_grupo_de_risco"]["sobrenome"].value;
+  var nro_whatsapp = document.forms["cadastro_grupo_de_risco"]["nro_whatsapp"].value;
+  var tipo_logradouro = document.forms["cadastro_grupo_de_risco"]["tipo_logradouro"].value;
+  var endereco = document.forms["cadastro_grupo_de_risco"]["endereco"].value;
+  var bairro = document.forms["cadastro_grupo_de_risco"]["bairro"].value;
+  var estado = document.forms["cadastro_grupo_de_risco"]["estado"].value;
+  var cidade = document.forms["cadastro_grupo_de_risco"]["cidade"].value;
+  var CEP = document.forms["cadastro_grupo_de_risco"]["CEP"].value;
+  var compras_supermercados = document.forms["cadastro_grupo_de_risco"]["compras_supermercados"].value;
+  var compras_farmacia = document.forms["cadastro_grupo_de_risco"]["compras_farmacia"].value;
+  var passeio_pet = document.forms["cadastro_grupo_de_risco"]["passeio_pet"].value;
+
+
+  if (item == "") {
+    alert("Primeiro campo precisa ser preenchido: favor informar em qual grupo de risco voce se encaixa");
+    return false;
+  }
+
+
+  if (nome == "") {
+    alert("Nome precisa ser preenchido");
+    return false;
+  }
+
+  if (sobrenome == "") {
+    alert("Sobrenome precisa ser preenchido");
+    return false;
+  }
+
+  if (nro_whatsapp == "") {
+    alert("Numero do Whatsapp precisa ser preenchido");
+    return false;
+  }
+
+  if (tipo_logradouro == "") {
+    alert("Tipo de logradouro precisa ser preenchido");
+    return false;
+  }
+
+  if (endereco == "") {
+    alert("Logradouro precisa ser preenchido");
+    return false;
+  }
+
+  if (bairro == "") {
+    alert("Bairro precisa ser preenchido");
+    return false;
+  }
+
+  if (estado == "") {
+    alert("Estado precisa ser preenchido");
+    return false;
+  }
+
+  if (cidade == "") {
+    alert("Cidade precisa ser preenchido");
+    return false;
+  }
+
+  if (CEP == "") {
+    alert("CEP precisa ser preenchido");
+    return false;
+  }
+
+}
+
+</script>
+
+<form class="needs-validation" novalidate="" method ="POST" onsubmit="return validateForm()" name="cadastro_grupo_de_risco">
               {% csrf_token %}
 <div class="container">
 <div class="row">

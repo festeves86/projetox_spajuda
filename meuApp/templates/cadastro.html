@@ -22,7 +22,81 @@ To-do List - About Me
 
 {% endif %}
 
-<form class="needs-validation" novalidate="" method ="POST">
+<script>
+
+
+function validateForm() {
+  var item = document.forms["cadastro_voluntario"]["item"].value;
+  var nome = document.forms["cadastro_voluntario"]["nome"].value;
+  var sobrenome = document.forms["cadastro_voluntario"]["sobrenome"].value;
+  var nro_whatsapp = document.forms["cadastro_voluntario"]["nro_whatsapp"].value;
+  var tipo_logradouro = document.forms["cadastro_voluntario"]["tipo_logradouro"].value;
+  var endereco = document.forms["cadastro_voluntario"]["endereco"].value;
+  var bairro = document.forms["cadastro_voluntario"]["bairro"].value;
+  var estado = document.forms["cadastro_voluntario"]["estado"].value;
+  var cidade = document.forms["cadastro_voluntario"]["cidade"].value;
+  var CEP = document.forms["cadastro_voluntario"]["CEP"].value;
+  var compras_supermercados = document.forms["cadastro_voluntario"]["compras_supermercados"].value;
+  var compras_farmacia = document.forms["cadastro_voluntario"]["compras_farmacia"].value;
+  var passeio_pet = document.forms["cadastro_voluntario"]["passeio_pet"].value;
+
+
+  if (item == "") {
+    alert("Primeiro campo precisa ser preenchido: favor informar se voce se enquadra em algum grupo de risco");
+    return false;
+  }
+
+
+  if (nome == "") {
+    alert("Nome precisa ser preenchido");
+    return false;
+  }
+
+  if (sobrenome == "") {
+    alert("Sobrenome precisa ser preenchido");
+    return false;
+  }
+
+  if (nro_whatsapp == "") {
+    alert("Numero do Whatsapp precisa ser preenchido");
+    return false;
+  }
+
+  if (tipo_logradouro == "") {
+    alert("Tipo de logradouro precisa ser preenchido");
+    return false;
+  }
+
+  if (endereco == "") {
+    alert("Logradouro precisa ser preenchido");
+    return false;
+  }
+
+  if (bairro == "") {
+    alert("Bairro precisa ser preenchido");
+    return false;
+  }
+
+  if (estado == "") {
+    alert("Estado precisa ser preenchido");
+    return false;
+  }
+
+  if (cidade == "") {
+    alert("Cidade precisa ser preenchido");
+    return false;
+  }
+
+  if (CEP == "") {
+    alert("CEP precisa ser preenchido");
+    return false;
+  }
+
+}
+
+</script>
+
+<form class="needs-validation" novalidate="" onsubmit="return validateForm()" method ="POST" name="cadastro_voluntario">
               {% csrf_token %}
 <div class="container">
 <div class="row">
