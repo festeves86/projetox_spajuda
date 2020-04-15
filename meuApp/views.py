@@ -24,7 +24,7 @@ def home(request):
 	else:	
 	 		all_items = List.objects.all
 	 		return render(request, 'home.html', {'all_items': all_items})
-	 		
+
 
 
 def sobre(request):
@@ -51,7 +51,7 @@ def cadastro(request):
 			if form.is_valid():
 				form.save()
 				all_items = List.objects.all
-				messages.success(request, 'Cadastro realizado com sucesso. A SampAjuda entrara em contato assim que pudermos conectar voce com alguma pessoa que possa contar com sua ajuda')
+				messages.success(request, 'Cadastro realizado com sucesso. A SampAjuda conectara voce assim que tiver uma pessoa procurando ajuda próximo ao seu local e com as preferencias indicadas.')
 				return render(request, 'cadastro.html', {'all_items': all_items})
 		else:
 	 		all_items = List.objects.all
