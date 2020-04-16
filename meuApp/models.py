@@ -6,7 +6,7 @@ class List(models.Model):
 	nome = models.CharField(max_length = 200, default='')
 	item = models.CharField(max_length = 200, default='')
 	sobrenome = models.CharField(max_length = 200, default='')
-	nro_whatsapp = models.CharField(max_length = 200, default='', primary_key=True )
+	nro_whatsapp = models.CharField(max_length = 200, default='', primary_key=True)
 	email = models.CharField(max_length = 200, default='NA', blank=True, null=True)
 	tipo_logradouro = models.CharField(max_length = 200, default='')
 	endereco = models.CharField(max_length = 200, default='')
@@ -24,9 +24,10 @@ class List(models.Model):
 	radio_dist2 = models.BooleanField(default= False)
 	radio_dist3 = models.BooleanField(default= False)
 	radio_dist4 = models.BooleanField(default= False)
-	conexao_whatsapp = models.CharField(max_length = 200, default='')
-	comentario1 = models.models.TextField(max_length = 200, default='', blank=True, null=True)
-	comentario2 = models.models.TextField(max_length = 200, default='', blank=True, null=True)
+	conexao = models.CharField(max_length = 200, default='', blank=True, null=True)
+	comentario1 = models.TextField(max_length = 200, default='', blank=True, null=True)
+	comentario2 = models.TextField(max_length = 200, default='', blank=True, null=True)
+
 	
 	def __str__(self):
 		return self.bairro
@@ -36,7 +37,7 @@ class List2(models.Model):
 	item = models.CharField(max_length = 200, default='')
 	nome = models.CharField(max_length = 200, default='')
 	sobrenome = models.CharField(max_length = 200, default='')
-	nro_whatsapp = models.CharField(max_length = 200, default='', primary_key=True )
+	nro_whatsapp = models.CharField(max_length = 200, default='',primary_key=True)
 	email = models.CharField(max_length = 200, default='NA', blank=True, null=True)
 	tipo_logradouro = models.CharField(max_length = 200, default='')
 	endereco = models.CharField(max_length = 200, default='')
@@ -51,9 +52,9 @@ class List2(models.Model):
 	outras_ajudas = models.BooleanField(default= False)
 	outras_ajudas_conteudo = models.TextField(max_length = 200, default='', blank=True, null=True)
 	completed = models.BooleanField(default= False)
-	conexao_whatsapp = models.CharField(max_length = 200, default='')
-	comentario1 = models.models.TextField(max_length = 200, default='', blank=True, null=True)
-	comentario2 = models.models.TextField(max_length = 200, default='', blank=True, null=True)
+	conexao = models.CharField(max_length = 200, default='', blank=True, null=True)
+	comentario1 = models.TextField(max_length = 200, default='', blank=True, null=True)
+	comentario2 = models.TextField(max_length = 200, default='', blank=True, null=True)
 	
 	def __str__(self):
 		return self.bairro

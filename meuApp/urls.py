@@ -8,5 +8,4 @@ urlpatterns = [
 	path('quero_ajudar/',views.cadastro, name='quero_ajudar'),
 	path('preciso_de_ajuda/',views.cadastro_gr, name='preciso_de_ajuda'),
     path('como_funciona/',views.como_funciona, name='como_funciona'),
-	path('delete/<list_id>', views.delete, name='delete'),
 ]

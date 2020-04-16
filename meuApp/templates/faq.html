@@ -13,6 +13,39 @@ Sobre
 {% block content %}
 
 
+<!-- {% if all_items %}
+<table class="table table-bordered">
+    {% for things in all_items %}
+      {% if things.completed %} 
+        <tr class=" table-secondary">
+          <td><center> {{  things.completed }} </center> </td>
+          <td><center> {{  things.nome }} </center> </td>
+          <td><center> {{  things.sobrenome }} </center> </td>
+          <td><center> {{  things.nro_whatsapp }} </center> </td>
+          <td><center> {{  things.endereco }} </center> </td>
+        </tr>
+      {% else %}
+        <tr>
+          <td><center> {{  things.completed }} </center> </td>
+          <td><center> {{  things.nome }} </center> </td>
+          <td><center> {{  things.sobrenome }} </center> </td>
+          <td><center> {{  things.nro_whatsapp }} </center> </td>
+          <td><center> {{  things.endereco }} </center> </td>
+        </tr>
+      {% endif %} 
+    {% endfor %}
+</table>
+{% endif %} -->
+<!-- 
+{% if messages %}
+
+	{% for message in messages %}
+		<div class="alert alert-warning" role="alert">
+				{{ message }}
+		</div>
+	{% endfor %}
+
+{% endif %} -->
 
 <div class="container" >
 

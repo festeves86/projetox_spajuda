@@ -48,6 +48,16 @@ def cadastro(request):
 
 			#year = request.POST.get('endereco', None)
 
+			nro_whatsapp_form = request.POST.get('nro_whatsapp', None)
+
+			all_whatsapps = List.objects.all().values_list('nro_whatsapp', flat=True) 
+			all_items = List.objects.all
+
+			for things in all_whatsapps:
+			 	if things == str(nro_whatsapp_form):
+			 		messages.success(request, 'Numero de Whatsapp ja esta cadastrado. Por favor tente outro numero.')
+			 		return render(request, 'cadastro.html', {'all_items': all_items})
+
 			if form.is_valid():
 				form.save()
 				all_items = List.objects.all
@@ -65,19 +75,23 @@ def cadastro_gr(request):
 			form = ListForm2(request.POST or None)
 
 			#year = request.POST.get('endereco', None)
+			nro_whatsapp_form = request.POST.get('nro_whatsapp', None)
+
+			all_whatsapps = List.objects.all().values_list('nro_whatsapp', flat=True) 
+			all_items = List.objects.all
+
+			for things in all_whatsapps:
+			 	if things == str(nro_whatsapp_form):
+			 		messages.success(request, 'Numero de Whatsapp ja esta cadastrado. Por favor tente outro numero.')
+			 		return render(request, 'cadastro.html', {'all_items': all_items})
 
 			if form.is_valid():
 				form.save()
-				all_items = List2.objects.all
+				all_items = List.objects.all
 				messages.success(request, 'Cadastro realizado com sucesso. A SampAjuda entrara em contato assim que pudermos conectar voce com alguma pessoa que possa ajudar voce')
-				return render(request, 'cadastro_gr.html', {'all_items': all_items})
+				return render(request, 'cadastro.html', {'all_items': all_items})
+
 		else:
 	 		all_items = List2.objects.all
 	 		return render(request, 'cadastro_gr.html', {'all_items': all_items})
 
-
-def delete(request, list_id):
-	item = List.objects.get(pk = list_id)
-	item.delete()
-	messages.success(request, ('Item has been deleted'))
-	return redirect('home')
