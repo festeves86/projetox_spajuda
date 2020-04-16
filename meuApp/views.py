@@ -83,8 +83,8 @@ def cadastro_gr(request):
 			#year = request.POST.get('endereco', None)
 			nro_whatsapp_form = request.POST.get('nro_whatsapp', None)
 
-			all_whatsapps = List.objects.all().values_list('nro_whatsapp', flat=True) 
-			all_items = List.objects.all
+			all_whatsapps = List2.objects.all().values_list('nro_whatsapp', flat=True) 
+			all_items = List2.objects.all
 
 			for things in all_whatsapps:
 			 	if things == str(nro_whatsapp_form):
@@ -93,7 +93,7 @@ def cadastro_gr(request):
 
 			if form.is_valid():
 				form.save()
-				all_items = List.objects.all
+				all_items = List2.objects.all
 				messages.success(request, 'Cadastro realizado com sucesso. A SampAjuda entrara em contato assim que pudermos conectar voce com alguma pessoa que possa ajudar voce')
 				return render(request, 'cadastro.html', {'all_items': all_items})
 
