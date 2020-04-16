@@ -39,6 +39,12 @@ def como_funciona(request):
 	my_name = "SampaAjuda"
 	return render(request, 'como_funciona.html', {'name': my_name})
 
+def vrnm(request):
+	nro_voluntarios = List.objects.all().count()
+	nro_grupo_de_risco = List2.objects.all().count()
+
+	return render(request, 'vrnm.html', {'nro_voluntarios': nro_voluntarios,'nro_grupo_de_risco': nro_grupo_de_risco})
+
 
 def cadastro(request):
 
