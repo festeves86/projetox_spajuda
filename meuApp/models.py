@@ -30,7 +30,7 @@ class List(models.Model):
 
 	
 	def __str__(self):
-		chave_adm = self.bairro + self.nome  + self.sobrenome
+		chave_adm = self.bairro + self.nome  + self.sobrenome + self.cidade
 		return chave_adm
 
 
@@ -58,5 +58,5 @@ class List2(models.Model):
 	comentario2 = models.TextField(max_length = 200, default='', blank=True, null=True)
 	
 	def __str__(self):
-		chave_adm = self.bairro + self.nome  + self.sobrenome
+		chave_adm = self.bairro + self.nome  + self.sobrenome + self.cidade
 		return chave_adm
