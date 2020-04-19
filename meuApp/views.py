@@ -89,13 +89,13 @@ def cadastro_gr(request):
 			for things in all_whatsapps:
 			 	if things == str(nro_whatsapp_form):
 			 		messages.success(request, 'Numero de Whatsapp ja esta cadastrado. Por favor tente outro numero.')
-			 		return render(request, 'cadastro.html', {'all_items': all_items})
+			 		return render(request, 'cadastro_gr.html', {'all_items': all_items})
 
 			if form.is_valid():
 				form.save()
 				all_items = List2.objects.all
 				messages.success(request, 'Cadastro realizado com sucesso. A SampAjuda entrara em contato assim que pudermos conectar voce com alguma pessoa que possa ajudar voce')
-				return render(request, 'cadastro.html', {'all_items': all_items})
+				return render(request, 'cadastro_gr.html', {'all_items': all_items})
 
 		else:
 	 		all_items = List2.objects.all
