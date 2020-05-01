@@ -31,6 +31,10 @@ def sobre(request):
 	my_name = "SampaAjuda"
 	return render(request, 'sobre.html', {'name': my_name})
 
+def privacidade(request):
+	my_name = "SampaAjuda"
+	return render(request, 'privacidade.html', {'name': my_name})
+
 def faq(request):
 	my_name = "SampaAjuda"
 	return render(request, 'faq.html', {'name': my_name})	
